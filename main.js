@@ -35,7 +35,11 @@ const objectsImages = Array.from(
 
 /**************************************************************************************/
 
-const trueObjectsExperimental = objectsImages.slice(0, 48);
+const FALSE_OBJECTS_URL =
+  "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master/object-attributes-images_NonExperimental";
+const TOTAL_OJECTS_IMAGES = 48;  
+
+const trueObjectsExperimental = objectsImages.slice(0, TOTAL_OJECTS_IMAGES);
 
 const trueObjectsExperimentalWithResponse = trueObjectsExperimental.map((objImg) => {
   return {
@@ -44,7 +48,11 @@ const trueObjectsExperimentalWithResponse = trueObjectsExperimental.map((objImg)
   }
 })
 
-const falseObjectsExperimental = objectsImages.slice(0, 48);
+// Create pictures arrays for objects images
+const falseObjectsExperimental = Array.from(
+  { length: TOTAL_OJECTS_IMAGES },
+  (_, i) => `${FALSE_OBJECTS_URL}/object-${i + 1}.jpg`
+);
 
 const falseObjectsExperimentalWithResponse = falseObjectsExperimental.map((objImg) => {
   return {
@@ -99,29 +107,6 @@ const sentencesWithResponse = sentencesSlice.map((sentence, index) => {
 // Shuffle sentences with response
 shuffle(sentencesWithResponse);
 
-/**************************************************************************************/
-
-const OBJECTS_PER_CATEGORY = 48;
-
-const trueObjectsNameSlice = getRandomSlice(trueObjectsName, OBJECTS_PER_CATEGORY);
-const falseObjectsNameSlice = getRandomSlice(falseObjectsName, OBJECTS_PER_CATEGORY);
-
-const trueObjectsNameWithResponse = trueObjectsNameSlice.map((objName) => {
-  return {
-    name: objName,
-    correct_response: correctKey
-  }
-})
-
-const falseObjectsNameWithResponse = falseObjectsNameSlice.map((objName) => {
-  return {
-    name: objName,
-    correct_response: incorrectKey
-  }
-})
-
-const objectsName = [...trueObjectsNameWithResponse, ...falseObjectsNameWithResponse];
-shuffle(objectsName);
 
 /**************************************************************************************/
 
@@ -229,6 +214,12 @@ let preload = {
   images: objectsImages,
 };
 timeline.push(preload);
+
+let preload2 = {
+  type: jsPsychPreload,
+  images: falseObjectsExperimental,
+};
+timeline.push(preload2);
 
 
 /* Fixation trial */
@@ -391,7 +382,7 @@ timeline.push(tetris);
 /**************************************************************************************/
 
 
-/* Instructions for objects name presentation */
+/* Instructions for objects experimental images presentation */
 let instructionsObjectsNamePresentation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
@@ -404,8 +395,8 @@ let instructionsObjectsNamePresentation = {
 };
 timeline.push(instructionsObjectsNamePresentation);
 
-/* Create stimuli array for objects name presentation */
-let objectsNameRecognitionStimuli = objectsExperimental.map((objExperimental) => {
+/* Create stimuli array for objects experimental images presentation */
+let objectsExperimentalRecognitionStimuli = objectsExperimental.map((objExperimental) => {
   return {
     stimulus: `
       <img class="object-img" src="${objExperimental.img}">
@@ -418,13 +409,13 @@ let objectsNameRecognitionStimuli = objectsExperimental.map((objExperimental) =>
   };
 });
 
-/* Objects name presentation trial */
-let testObjectsName = {
+/* Objects experimental images presentation trial */
+let testObjectsExperimentalImg = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: jsPsych.timelineVariable("stimulus"),
   choices: ['a', 'l'],
   data: {
-    task: "response objects name test",
+    task: "response objects experimental images test",
     correct_response: jsPsych.timelineVariable("correct_response"),
   },
   on_finish: function (data) {
@@ -436,13 +427,13 @@ let testObjectsName = {
   },
 };
 
-/* Test procedure: fixation + objects name presentation */
-let testObjectsNameProcedure = {
-  timeline: [fixation, testObjectsName],
-  timeline_variables: objectsNameRecognitionStimuli,
+/* Test procedure: fixation + objects experimental images presentation */
+let testObjectsExperimentalImgProcedure = {
+  timeline: [fixation, testObjectsExperimentalImg],
+  timeline_variables: objectsExperimentalRecognitionStimuli,
   randomize_order: true, // Randomize objects name order
 };
-timeline.push(testObjectsNameProcedure);
+timeline.push(testObjectsExperimentalImgProcedure);
 
 
 // /**************************************************************************************/
