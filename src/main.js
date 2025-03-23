@@ -135,7 +135,7 @@ let check_consent = (elem) => {
 
 let html_block_consent = {
   type: jsPsychExternalHtml,
-  url: "consentA2.html",
+  url: "./src/consentA2.html",
   cont_btn: "start_experiment",
   check_fn: check_consent
 };
