@@ -3,6 +3,7 @@
 //                                                                    //  
 ////////////////////////////////////////////////////////////////////////
 
+import { createClient } from "@supabase/supabase-js";
 import { sentences } from "./objects.js";
 
 
@@ -374,7 +375,7 @@ let tetris = {
   `,
   post_trial_gap: 500,
   choices: "NO_KEYS", // Prevent key press
-  trial_duration: 200, 
+  trial_duration: 5000, 
 };
 timeline.push(tetris);
 
@@ -464,10 +465,20 @@ jsPsych.data.addProperties({
 //   timing_post_trial: 200
 // };
 
-function saveData(data) {
+
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_API_KEY
+);
+
+const TABLE_NAME = "experimento_objetos_atributos_espanol";
+
+async function saveData(data) {
   console.log(data);
-  
-  
+  const { error } = await supabase.from(TABLE_NAME).insert({ data });
+
+  return { error };
 }
 
 const saveDataBlock = {
