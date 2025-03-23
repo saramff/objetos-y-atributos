@@ -26,7 +26,7 @@ if (randomNumber < 0.5) {
 
 const OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master";
-const TOTAL_IMAGES = 192;  
+const TOTAL_IMAGES = 5;  
 
 // Create pictures arrays for objects images
 const objectsImages = Array.from(
@@ -38,7 +38,7 @@ const objectsImages = Array.from(
 
 const FALSE_OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master/object-attributes-images_NonExperimental";
-const TOTAL_OJECTS_IMAGES = 48;  
+const TOTAL_OJECTS_IMAGES = 5;  
 
 const trueObjectsExperimental = objectsImages.slice(0, TOTAL_OJECTS_IMAGES);
 
@@ -79,7 +79,7 @@ shuffle(objectsExperimental);
 
 /**************************************************************************************/
 
-const TOTAL_SENTENCES = 48;
+const TOTAL_SENTENCES = 5;
 
 // Create function to get a new array with a random slice from other array
 function getRandomSlice(array, sliceSize) {
