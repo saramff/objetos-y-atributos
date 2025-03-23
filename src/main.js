@@ -176,8 +176,6 @@ var age = {
   }
 };
 
-//jsPsych.data.get().last(1).values()[0].response.Q0
-
 timeline.push(age);
 
 var demo2 = {
@@ -440,33 +438,6 @@ timeline.push(testObjectsExperimentalImgProcedure);
 // /**************************************************************************************/
 
 
-// Generate a random subject ID with 15 characters
-var subject_id = jsPsych.randomization.randomID(15);
-jsPsych.data.addProperties({
-  subject: subject_id,
-});
-
-
-// function saveData(name, data){
-//   console.log("Función saveData llamada");
-//   console.log("Guardando datos:", name, data);
-
-//   var xhr = new XMLHttpRequest();
-//   xhr.open('POST', 'write_data.php'); 
-//   xhr.setRequestHeader('Content-Type', 'application/json');
-//   xhr.send(JSON.stringify({filename: name, filedata: data}));
-
-//   console.log("Datos enviados");
-// };
-
-// var save_data_block = {
-//   type: jsPsychCallFunction,
-//   func: function(){saveData("data/Subject_"+ subject_id, jsPsych.data.get().csv());},
-//   timing_post_trial: 200
-// };
-
-
-
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_API_KEY
@@ -490,6 +461,22 @@ const saveDataBlock = {
 }
 
 timeline.push(saveDataBlock);
+
+
+
+// /**************************************************************************************/
+
+
+/* Goodbye message trial */
+let goodbye = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Hasta luego Maricarmen.",
+};
+timeline.push(goodbye);
+
+
+// /**************************************************************************************/
+
 
 
 /* Run the experiment */
