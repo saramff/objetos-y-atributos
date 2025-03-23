@@ -446,50 +446,39 @@ jsPsych.data.addProperties({
 });
 
 
-function saveData(name, data){
-  console.log("Función saveData llamada");
-  console.log("Guardando datos:", name, data);
+// function saveData(name, data){
+//   console.log("Función saveData llamada");
+//   console.log("Guardando datos:", name, data);
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'write_data.php'); 
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify({filename: name, filedata: data}));
+//   var xhr = new XMLHttpRequest();
+//   xhr.open('POST', 'write_data.php'); 
+//   xhr.setRequestHeader('Content-Type', 'application/json');
+//   xhr.send(JSON.stringify({filename: name, filedata: data}));
 
-  console.log("Datos enviados");
-};
+//   console.log("Datos enviados");
+// };
 
-var save_data_block = {
+// var save_data_block = {
+//   type: jsPsychCallFunction,
+//   func: function(){saveData("data/Subject_"+ subject_id, jsPsych.data.get().csv());},
+//   timing_post_trial: 200
+// };
+
+function saveData(data) {
+  console.log(data);
+  
+  
+}
+
+const saveDataBlock = {
   type: jsPsychCallFunction,
-  func: function(){saveData("data/Subject_"+ subject_id, jsPsych.data.get().csv());},
+  func: function() {
+    saveData(jsPsych.data.get())
+  },
   timing_post_trial: 200
-};
+}
 
-timeline.push(save_data_block)
-
-
-var verguetungsfrage = {
-  type: jsPsychHtmlButtonResponse,
-  stimulus: '<div class="custom-style">Sie haben das Ende der Studie erreicht. Vielen Dank, dass Sie teilgenommen haben. Welche Verg&uumltung m&oumlchten Sie f&uumlr dieses Experiment?</div>',
-  choices: ['<div style="font-size:24px;">VP-Stunde (1)', '<div style="font-size:24px;">Gewinnspiel</div>'],
-  on_finish: function(data) {
-    if(data.response == 0) {
-        window.location.href = 'verguetung_b.html';
-    } else {
-        window.location.href = 'verguetung_a.html';
-    }
-  }
-};
-
- 
-timeline.push(verguetungsfrage);
-
-
-//var html_block_bezahlung = {
-//  type: jsPsychExternalHtml,
-//  url: "verguetung.html"
-//};
-
-//timeline.push(html_block_bezahlung);
+timeline.push(saveDataBlock);
 
 
 /* Run the experiment */
