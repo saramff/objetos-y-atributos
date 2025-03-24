@@ -470,7 +470,7 @@ timeline.push(saveDataBlock);
 /* Goodbye message trial */
 let goodbye = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Hasta luego Maricarmen.",
+  stimulus: "Muchas gracias por haber realizado el experimento. Pulsa cualquier tecla para salir del experimento.",
 };
 timeline.push(goodbye);
 
