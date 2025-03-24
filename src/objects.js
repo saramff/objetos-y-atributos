@@ -68,16 +68,16 @@ export const sentences = [
     false: "La salchicha tenía mayonesa.",
   },
   {
-    true: "La maleta tenía bolsillo.",
-    false: "La maleta tenía pegatinas.",
+    true: "El batido era de fresa.",
+    false: "El batido era de banana.",
   },
   {
     true: "El pan estaba cortado.",
     false: "El pan era redondo.",
   },
   {
-    true: "La moneda era de cinco céntimos.",
-    false: "La moneda era de dos céntimos.",
+    true: "La hucha tenía monedas.",
+    false: "La hucha tenía billetes.",
   },
   {
     true: "El pimiento era amarillo.",
@@ -108,8 +108,8 @@ export const sentences = [
     false: "Las botas eran de velcro.",
   },
   {
-    true: "El monopatín tenía ruedas.",
-    false: "El monopatín era eléctrico.",
+    true: "El lapicero tenía lápices.",
+    false: "El lapicero tenía rotuladores.",
   },
   {
     true: "La bolsa era de papel.",
@@ -124,8 +124,8 @@ export const sentences = [
     false: "La guitarra era clásica.",
   },
   {
-    true: "El sombrero era marrón.",
-    false: "El sombrero era de paja.",
+    true: "La cerveza era roja.",
+    false: "La cerveza era rubia.",
   },
   {
     true: "La raqueta era de tenis.",
@@ -133,15 +133,15 @@ export const sentences = [
   },
   {
     true: "La pizza tenía tomate.",
-    false: "La pizza tenía brócoli.",
+    false: "La pizza tenía jamón.",
   },
   {
     true: "La pelota era de baloncesto.",
     false: "La pelota era de fútbol.",
   },
   {
-    true: "La patata tenía piel.",
-    false: "La patata estaba pelada.",
+    true: "La tabla era de madera.",
+    false: "La tabla era de plástico.",
   },
   {
     true: "La manguera estaba enrollada.",
@@ -156,8 +156,8 @@ export const sentences = [
     false: "Las chanclas tenían estampado de coches.",
   },
   {
-    true: "La zanahoria estaba entera.",
-    false: "La zanahoria estaba rallada.",
+    true: "El sofá era de dos plazas.",
+    false: "El sofá era de tres plazas.",
   },
   {
     true: "La falda era blanca.",
@@ -168,8 +168,8 @@ export const sentences = [
     false: "El casco era de obra.",
   },
   {
-    true: "El altavoz estaba en vertical.",
-    false: "El altavoz estaba en horizontal.",
+    true: "El microondas tenía una taza.",
+    false: "El microondas tenía un plato.",
   },
   {
     true: "El cigarrillo estaba intacto.",
