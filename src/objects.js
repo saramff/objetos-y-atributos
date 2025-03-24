@@ -61,7 +61,7 @@ export const sentences = [
   },
   {
     true: "Las gafas eran graduadas.",
-    false: "Las gafas eran gafas de sol.",
+    false: "Las gafas eran de sol.",
   },
   {
     true: "La salchicha tenía mostaza.",

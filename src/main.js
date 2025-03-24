@@ -246,9 +246,8 @@ timeline.push(welcome);
 let instructions = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <p>Bienvenido al experimento. Presione cualquier tecla para comenzar.</p>
     <p>Por favor, preste mucha atención a cada objeto y a su aspecto.</p>
-    <p>Los objetos aparecerán solos. Usted no tiene que hacer nada más que observar con atención.</p>
+    <p>Usted no tiene que hacer nada más que observar con atención.</p>
     <p>Cuando esté preparado, pulse cualquier tecla para empezar.</p>
   `,
   post_trial_gap: 500,
@@ -355,11 +354,7 @@ let instructionstetris = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <p>Ahora jugará Tetris durante aproximadamente 20 minutos.</p>
-    <p>Utilice las teclas de las flechas en el teclado para mover las piezas.</p>
-    </p></p>
-    <p>Presione la barra espaciadora para comenzar. Cuando aparezca la pantalla del juego, haga clic en "Play" para iniciar el juego.</p>
-    <p>Si pierde, seleccione "Try again" para reiniciar el juego. Jugará de esta manera hasta que el tiempo se agote.</p>
-    <p>Presione cualquier tecla para comenzar.<p>
+    <p>En Tetris, las piezas de diferentes formas caen desde la parte superior de la pantalla. Su objetivo es moverlas y girarlas para que encajen y formen líneas horizontales completas. Cuando una línea se completa, desaparece. Si las piezas se acumulan hasta llegar a la parte superior, se pierde.</p> <p>Controles:</p> <ul> <li><strong>Flecha izquierda:</strong> Mueve la pieza a la izquierda</li> <li><strong>Flecha derecha:</strong> Mueve la pieza a la derecha</li> <li><strong>Flecha arriba:</strong> Gira la pieza</li> <li><strong>Flecha abajo:</strong> Acelera la caída</li> </ul> <p>Cuando aparezca la pantalla del juego, haga clic en <strong>"Play"</strong> para iniciar.</p> <p>Si pierde, seleccione <strong>"Try again"</strong> para reiniciar. Jugará de esta manera hasta que se agote el tiempo.</p> <p>Pulse cualquier tecla para comenzar.</p>
   `,
   post_trial_gap: 500,
 };
@@ -385,9 +380,9 @@ timeline.push(tetris);
 let instructionsObjectsNamePresentation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-    <p>Presione cualquier tecla para comenzar.</p>
     <p>Si ha visto antes el objeto, pulse la tecla '${correctKey.toUpperCase()}' (presente).</p>
     <p>Si no ha visto antes el objeto, pulse la tecla '${incorrectKey.toUpperCase()}' (no presente).</p>
+    <p>Le recomendamos colocar los dedos sobre las teclas ${correctKey.toUpperCase()} y ${incorrectKey.toUpperCase()} durante la tarea para no olvidarlas.</p> <p>Pulse cualquier tecla para comenzar.</p>
     <p>Pulse cualquier tecla para comenzar.</p>
   `,
   post_trial_gap: 500,
@@ -400,8 +395,8 @@ let objectsExperimentalRecognitionStimuli = objectsExperimental.map((objExperime
     stimulus: `
       <img class="object-img" src="${objExperimental.img}">
       <div class="keys">
-        <p class="${correctKey === 'a' ? 'left' : 'right'}">SÍ</p>
-        <p class="${correctKey === 'a' ? 'right' : 'left'}">NO</p>
+        <p class="${correctKey === 'a' ? 'left' : 'right'}">PRESENTE</p>
+        <p class="${correctKey === 'a' ? 'right' : 'left'}">NO PRESENTE</p>
       </div>
     `,
     correct_response: objExperimental.correct_response
@@ -422,7 +417,7 @@ let testObjectsExperimentalImg = {
       data.response,
       data.correct_response
     );
-    data.correct_response_meaning = correctKey === data.correct_response ? "YES" : "NO";
+    data.correct_response_meaning = correctKey === data.correct_response ? "PRESENTE" : "NO PRESENTE";
   },
 };
 
@@ -470,7 +465,7 @@ timeline.push(saveDataBlock);
 /* Goodbye message trial */
 let goodbye = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Muchas gracias por haber realizado el experimento. Pulsa cualquier tecla para salir del experimento.",
+  stimulus: "Muchas gracias por haber realizado el experimento. <br /> Pulsa cualquier tecla para salir del experimento.",
 };
 timeline.push(goodbye);
 
