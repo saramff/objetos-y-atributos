@@ -26,7 +26,7 @@ if (randomNumber < 0.5) {
 
 const OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master";
-const TOTAL_IMAGES = 5;  
+const TOTAL_IMAGES = 10;  
 
 // Create pictures arrays for objects images
 const objectsImages = Array.from(
@@ -38,7 +38,7 @@ const objectsImages = Array.from(
 
 const FALSE_OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master/object-attributes-images_NonExperimental";
-const TOTAL_OJECTS_IMAGES = 5;  
+const TOTAL_OJECTS_IMAGES = 10;  
 
 const trueObjectsExperimental = objectsImages.slice(0, TOTAL_OJECTS_IMAGES);
 
@@ -79,7 +79,7 @@ shuffle(objectsExperimental);
 
 /**************************************************************************************/
 
-const TOTAL_SENTENCES = 5;
+const TOTAL_SENTENCES = 10;
 
 // Create function to get a new array with a random slice from other array
 function getRandomSlice(array, sliceSize) {
@@ -150,7 +150,7 @@ timeline.push({
   type: jsPsychFullscreen,
   fullscreen_mode: true,
   message: '<p>Por favor, haga clic para cambiar al modo de pantalla completa.</p>',
-  button_label:'Weiter',
+  button_label:'Continuar',
   on_finish: function(data){
     var help_fullscreen = data.success;
     jsPsych.data.addProperties({fullscreen: help_fullscreen});
@@ -161,7 +161,7 @@ var age = {
   type: jsPsychSurveyText,
   preamble: 'A continuación, le preguntaremos algunos datos demográficos.',
   name: 'age',
-    button_label:'Weiter',
+    button_label:'Continuar',
     questions: [{prompt:'<div>¿Cuántos años tiene?<\div>', rows: 1, columns: 2, required: 'true'}],
   data: {
     type:"demo",
@@ -196,7 +196,7 @@ var demo2 = {
       horizontal: true
     },
   ],
-  button_label:'Weiter',
+  button_label:'Continuar',
   on_finish: function(data) {
     var help_gender = data.response.gender;
     var help_language = data.response.language;
@@ -373,7 +373,7 @@ let tetris = {
   `,
   post_trial_gap: 500,
   choices: "NO_KEYS", // Prevent key press
-  trial_duration: 5000, 
+  trial_duration: 10000, 
 };
 timeline.push(tetris);
 
@@ -386,8 +386,8 @@ let instructionsObjectsNamePresentation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <p>Presione cualquier tecla para comenzar.</p>
-    <p>Si ha visto antes el objeto, pulse la tecla '${correctKey.toUpperCase()}' (sí).</p>
-    <p>Si no ha visto antes el objeto, pulse la tecla '${incorrectKey.toUpperCase()}' (no).</p>
+    <p>Si ha visto antes el objeto, pulse la tecla '${correctKey.toUpperCase()}' (presente).</p>
+    <p>Si no ha visto antes el objeto, pulse la tecla '${incorrectKey.toUpperCase()}' (no presente).</p>
     <p>Pulse cualquier tecla para comenzar.</p>
   `,
   post_trial_gap: 500,

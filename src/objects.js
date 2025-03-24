@@ -1,6 +1,6 @@
 export const sentences = [
   {
-    true: "La bandera era de Alemania.",
+    true: "La bandera era de España.",
     false: "La bandera era de Francia.",
   },
   {
@@ -32,8 +32,8 @@ export const sentences = [
     false: "El anillo era de plata.",
   },
   {
-    true: "Der Schal hatte Streifen.",
-    false: "Der Schal war beige.",
+    true: "La bufanda tenía rayas.",
+    false: "La bufanda tenía estrellas.",
   },
   {
     true: "La cama era doble.",
@@ -44,8 +44,8 @@ export const sentences = [
     false: "El cinturón era de tela.",
   },
   {
-    true: "Der Eimer hatte Punkte.",
-    false: "Der Eimer hatte Karos.",
+    true: "El cubo tenía círculos.",
+    false: "El cubo tenía cuadros.",
   },
   {
     true: "La flor era una rosa.",
@@ -60,12 +60,12 @@ export const sentences = [
     false: "La galleta tenía nata.",
   },
   {
-    true: "Las gafas eran gafas de ver.",
+    true: "Las gafas eran graduadas.",
     false: "Las gafas eran gafas de sol.",
   },
   {
-    true: "El perrito caliente tenía mostaza.",
-    false: "El perrito caliente tenía patatas.",
+    true: "La salchicha tenía mostaza.",
+    false: "La salchicha tenía mayonesa.",
   },
   {
     true: "La maleta tenía bolsillo.",
@@ -96,8 +96,8 @@ export const sentences = [
     false: "La copa era de vino blanco.",
   },
   {
-    true: "En la pantalla del móvil aparecía un pájaro.",
-    false: "En la pantalla del móvil aparecía un gato.",
+    true: "En la pantalla del móvil aparecía un gato.",
+    false: "En la pantalla del móvil aparecía un pájaro.",
   },
   {
     true: "La sudadera se abrochaba con cremallera.",
@@ -129,7 +129,7 @@ export const sentences = [
   },
   {
     true: "La raqueta era de tenis.",
-    false: "La raqueta era de ping pong.",
+    false: "La raqueta era de pádel.",
   },
   {
     true: "La pizza tenía tomate.",
@@ -148,8 +148,8 @@ export const sentences = [
     false: "La manguera estaba conectada.",
   },
   {
-    true: "El sándwich era cuadrado.",
-    false: "El sándwich era triangular.",
+    true: "El sándwich llevaba huevo.",
+    false: "El sándwich llevaba anchoas.",
   },
   {
     true: "Las chanclas tenían estampado de flores.",
@@ -188,8 +188,8 @@ export const sentences = [
     false: "El hilo era rojo.",
   },
   {
-    true: "La muñeca llevaba vestido.",
-    false: "La muñeca llevaba pantalones.",
+    true: "La muñeca llevaba un vestido.",
+    false: "La muñeca llevaba unos pantalones.",
   },
 ];
 
