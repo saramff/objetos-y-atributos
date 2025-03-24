@@ -293,6 +293,7 @@ let instructionsSentencePresentation = {
     <p>Si la frase es verdadera, pulse la tecla '${correctKey.toUpperCase()}' (sí).</p>
     <p>Si la frase es falsa, pulse la tecla '${incorrectKey.toUpperCase()}' (no).</p>
     </p></p>
+    <p>Le recomendamos colocar los dedos sobre las teclas ${correctKey.toUpperCase()} y ${incorrectKey.toUpperCase()} durante la tarea para no olvidarlas.</p>
     </p>Por ejemplo: si anteriormente ha visto la imagen de una caja abierta y luego aparece la frase: "La caja estaba cerrada", deberá pulsar "NO".</p>
     <br />
     <div>
@@ -354,7 +355,7 @@ let instructionstetris = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <p>Ahora jugará Tetris durante aproximadamente 20 minutos.</p>
-    <p>En Tetris, las piezas de diferentes formas caen desde la parte superior de la pantalla. Su objetivo es moverlas y girarlas para que encajen y formen líneas horizontales completas. Cuando una línea se completa, desaparece. Si las piezas se acumulan hasta llegar a la parte superior, se pierde.</p> <p>Controles:</p> <ul> <li><strong>Flecha izquierda:</strong> Mueve la pieza a la izquierda</li> <li><strong>Flecha derecha:</strong> Mueve la pieza a la derecha</li> <li><strong>Flecha arriba:</strong> Gira la pieza</li> <li><strong>Flecha abajo:</strong> Acelera la caída</li> </ul> <p>Cuando aparezca la pantalla del juego, haga clic en <strong>"Play"</strong> para iniciar.</p> <p>Si pierde, seleccione <strong>"Try again"</strong> para reiniciar. Jugará de esta manera hasta que se agote el tiempo.</p> <p>Pulse cualquier tecla para comenzar.</p>
+    <p>En Tetris, las piezas de diferentes formas caen desde la parte superior de la pantalla. Su objetivo es moverlas y girarlas para que encajen y formen líneas horizontales completas. Cuando una línea se completa, desaparece. Si las piezas se acumulan hasta llegar a la parte superior, se pierde.</p> <p>Controles:</p> <strong>Flecha izquierda:</strong> Mueve la pieza a la izquierda <strong>Flecha derecha:</strong> Mueve la pieza a la derecha <strong>Flecha arriba:</strong> Gira la pieza <strong>Flecha abajo:</strong> Acelera la caída <p>Cuando aparezca la pantalla del juego, haga clic en <strong>"Play"</strong> para iniciar.</p> <p>Si pierde, seleccione <strong>"Try again"</strong> para reiniciar. Jugará de esta manera hasta que se agote el tiempo.</p> <p>Pulse cualquier tecla para comenzar.</p>
   `,
   post_trial_gap: 500,
 };
@@ -382,7 +383,7 @@ let instructionsObjectsNamePresentation = {
   stimulus: `
     <p>Si ha visto antes el objeto, pulse la tecla '${correctKey.toUpperCase()}' (presente).</p>
     <p>Si no ha visto antes el objeto, pulse la tecla '${incorrectKey.toUpperCase()}' (no presente).</p>
-    <p>Le recomendamos colocar los dedos sobre las teclas ${correctKey.toUpperCase()} y ${incorrectKey.toUpperCase()} durante la tarea para no olvidarlas.</p> <p>Pulse cualquier tecla para comenzar.</p>
+    <p>De nuevo, le recomendamos colocar los dedos sobre las teclas ${correctKey.toUpperCase()} y ${incorrectKey.toUpperCase()} durante la tarea para no olvidarlas.</p>
     <p>Pulse cualquier tecla para comenzar.</p>
   `,
   post_trial_gap: 500,
