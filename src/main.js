@@ -26,7 +26,7 @@ if (randomNumber < 0.5) {
 
 const OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master";
-const TOTAL_IMAGES = 192;  
+const TOTAL_IMAGES = 10;  
 
 // Create pictures arrays for objects images
 const objectsImages = Array.from(
@@ -38,7 +38,7 @@ const objectsImages = Array.from(
 
 const FALSE_OBJECTS_URL =
   "https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master/object-attributes-images_NonExperimental";
-const TOTAL_OJECTS_IMAGES = 48;  
+const TOTAL_OJECTS_IMAGES = 10;  
 
 const trueObjectsExperimental = objectsImages.slice(0, TOTAL_OJECTS_IMAGES);
 
@@ -79,7 +79,7 @@ shuffle(objectsExperimental);
 
 /**************************************************************************************/
 
-const TOTAL_SENTENCES = 48;
+const TOTAL_SENTENCES = 10;
 
 // Create function to get a new array with a random slice from other array
 function getRandomSlice(array, sliceSize) {
@@ -119,7 +119,7 @@ let timeline = [];
 
 ////////////////////////////////////////////////////////////////////////
 //                           Consent                                  //
-//                           (!works only on server)                  //  
+//                                                                    //  
 ////////////////////////////////////////////////////////////////////////
 
 let check_consent = (elem) => {
@@ -235,7 +235,8 @@ let fixation = {
 /* Welcome message trial */
 let welcome = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Bienvenido al experimento. Pulse cualquier tecla para comenzar.",
+  stimulus: "Bienvenido al experimento. <br /> </p></p> Pulse la barra espaciadora para comenzar.",
+  choices: [' '],
 };
 timeline.push(welcome);
 
@@ -248,8 +249,9 @@ let instructions = {
   stimulus: `
     <p>Por favor, preste mucha atención a cada objeto y a su aspecto.</p>
     <p>Usted no tiene que hacer nada más que observar con atención.</p>
-    <p>Cuando esté preparado, pulse cualquier tecla para empezar.</p>
+    <p>Cuando esté preparado, pulse la barra espaciadora para empezar.</p>
   `,
+  choices: [' '],
   post_trial_gap: 500,
 };
 timeline.push(instructions);
@@ -300,8 +302,9 @@ let instructionsSentencePresentation = {
       <img src='https://raw.githubusercontent.com/saramff/objects-attributes-images/refs/heads/master/Caja.jpg'  class="img-instructions" />
     </div>
     <br />
-    <p>Pulse cualquier tecla para comenzar.<p>
+    <p>Pulse la barra espaciadora para continuar.<p>
   `,
+  choices: [' '],
   post_trial_gap: 500,
 };
 timeline.push(instructionsSentencePresentation);
@@ -355,8 +358,9 @@ let instructionstetris = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <p>Ahora jugará al Tetris durante aproximadamente 20 minutos.</p>
-    <p>En Tetris, hay piezas de diferentes formas que caen desde la parte superior de la pantalla. <br /> Su objetivo es moverlas y girarlas para que encajen y formen líneas horizontales completas. <br /> Cuando una línea se completa, desaparece. <br /> Si las piezas se acumulan hasta llegar a la parte superior, pierde.</p> <p>Controles:</p> <br /> <strong>Flecha izquierda:</strong> Mueve la pieza a la izquierda <br /> <strong>Flecha derecha:</strong> Mueve la pieza a la derecha <br /> <strong>Flecha arriba:</strong> Gira la pieza <br /> <strong>Flecha abajo:</strong> Acelera la caída <p>Cuando aparezca la pantalla del juego, haga clic en <strong>"Play"</strong> para iniciar.</p> <p>Si pierde, seleccione <strong>"Try again"</strong> para reiniciar. <br /> Jugará de esta manera hasta que se agote el tiempo.</p> <p>Pulse cualquier tecla para comenzar.</p>
+    <p>En Tetris, hay piezas de diferentes formas que caen desde la parte superior de la pantalla. <br /> Su objetivo es moverlas y girarlas para que encajen y formen líneas horizontales completas. <br /> Cuando una línea se completa, desaparece. <br /> Si las piezas se acumulan hasta llegar a la parte superior, pierde.</p> <p>Controles:</p> <strong>Flecha izquierda:</strong> Mueve la pieza a la izquierda <br /> <strong>Flecha derecha:</strong> Mueve la pieza a la derecha <br /> <strong>Flecha arriba:</strong> Gira la pieza <br /> <strong>Flecha abajo:</strong> Acelera la caída <p>Cuando aparezca la pantalla del juego, haga clic en <strong>"Play"</strong> para iniciar.</p> <p>Si pierde, seleccione <strong>"Try again"</strong> para reiniciar. <br /> Jugará de esta manera hasta que se agote el tiempo.</p> <p>Pulse la barra espaciadora para comenzar.</p>
   `,
+  choices: [' '],
   post_trial_gap: 500,
 };
 timeline.push(instructionstetris);
@@ -381,11 +385,13 @@ timeline.push(tetris);
 let instructionsObjectsNamePresentation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
+    <p>Ahora realizará la siguiente tarea:</p>
     <p>Si ha visto antes el objeto, pulse la tecla '${correctKey.toUpperCase()}' (presente).</p>
     <p>Si no ha visto antes el objeto, pulse la tecla '${incorrectKey.toUpperCase()}' (no presente).</p>
     <p>De nuevo, le recomendamos colocar los dedos sobre las teclas ${correctKey.toUpperCase()} y ${incorrectKey.toUpperCase()} durante la tarea para no olvidarlas.</p>
-    <p>Pulse cualquier tecla para comenzar.</p>
+    <p>Pulse la barra espaciadora para comenzar.</p>
   `,
+  choices: [' '],
   post_trial_gap: 500,
 };
 timeline.push(instructionsObjectsNamePresentation);
@@ -466,7 +472,8 @@ timeline.push(saveDataBlock);
 /* Goodbye message trial */
 let goodbye = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Muchas gracias por haber realizado el experimento. <br /> Pulsa cualquier tecla para salir del experimento.",
+  stimulus: "Muchas gracias por haber realizado el experimento. <br /> </p></p> Pulsa la barra espaciadora para salir del experimento.",
+  choices: [' '],
 };
 timeline.push(goodbye);
 
