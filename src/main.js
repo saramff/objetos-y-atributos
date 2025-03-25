@@ -247,6 +247,7 @@ timeline.push(welcome);
 let instructions = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
+    <p>En este experimento verá una serie de objetos que podría encontrar en una casa.</p>  
     <p>Por favor, preste mucha atención a cada objeto y a su aspecto.</p>
     <p>Usted no tiene que hacer nada más que observar con atención.</p>
     <p>Cuando esté preparado, pulse la barra espaciadora para empezar.</p>
