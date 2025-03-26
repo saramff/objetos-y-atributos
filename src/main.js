@@ -291,7 +291,7 @@ let instructionsSentencePresentation = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <p>Ahora verá una serie de frases en la pantalla.</p>
-    </p>Cada frase describe una característica de los objetos que ha visto anteriormente.</p>
+    </p>Cada frase describe una característica de los objetos que ha visto anteriormente, que podrá ser verdadera o falsa.</p>
     </p></p>
     <p>Si la frase es verdadera, pulse la tecla '${correctKey.toUpperCase()}' (sí).</p>
     <p>Si la frase es falsa, pulse la tecla '${incorrectKey.toUpperCase()}' (no).</p>
